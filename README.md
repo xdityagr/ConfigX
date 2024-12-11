@@ -58,13 +58,14 @@ This is the heart of **ConfigX**. Use this method resolve different **Keypath Ma
     You simply use a *keypath*, like a magical treasure map:  
     ```python
     keypath = 'fridge.shelf.item'
+    # keypath = 'cake'
     ```  
     **Result?** You instantly find your `'cake'` 🍰 without breaking a sweat.
 
     Or change things up:  
     ```python
     keypath = 'fridge.temperature=-5'
-    # keypath = 'cake'
+    # keypath = -5
 
     ```  
     **Boom!** The fridge is now colder ❄️ and your ice cream stays frosty. Hence, As seen in this example it is *so easy* to access and play with values.
