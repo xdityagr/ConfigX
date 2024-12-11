@@ -177,7 +177,8 @@ Resets the entire `uisettings` section to its default values. A nice reset butto
 
 ---
 
-## 🔄 Batch Transactions
+# Features : 
+## 🔄 1. Batch Transactions
 
 You’ve got a lot to do, and sometimes you need to handle multiple changes at once. **ConfigX** lets you do that effortlessly.
 
@@ -189,7 +190,7 @@ confx.resolve('appSettings.theme=dark', 'appSettings.shortcuts=enabled')
 
 Batch update multiple settings in one line. It’s quick and efficient, perfect for bulk operations.
 
-### **Way 2:**
+### **Way 2:** (Much safer)
 
 ```python
 with confx.transaction():
@@ -201,7 +202,7 @@ Wrap operations in a transaction for atomicity. Either all changes succeed, or n
 
 ---
 
-## 🛡️ Schema Validation
+## 2. 🛡️ Schema Validation : 
 
 **ConfigX** doesn’t just let you manage settings—it ensures they’re correct, too. Schema validation ensures your configuration matches expected formats.
 
@@ -221,15 +222,15 @@ Validates your configuration structure against a schema. It’s like an extra la
 
 ---
 
-## 🔒 Encryption
+## 3. 🔒 Encryption : 
 
 For sensitive data like passwords or API keys, **ConfigX** offers seamless encryption support.
 
 ```python
-confx.resolve('appSettings.auth.password:SENSITIVE="my_password"')
+confx.resolve('appSettings.auth.password:ENCRYPTED="my_password"')
 ```
 
-Anything marked as `SENSITIVE` is automatically encrypted. Privacy is a priority, always.
+Anything marked as `ENCRYPTED` is automatically encrypted. Privacy is a priority, always.
 
 ---
 
