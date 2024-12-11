@@ -114,7 +114,7 @@ confx.resolve('appSettings.uisettings.isLoggedIn:BOOL=false')
 Creates an `isLoggedIn` value with a default `false`. Every app needs to know if the user is logged in, right?
 
 ```python
-confx.resolve('appSettings.uisettings.*[theme="dark":STR, keyboard-shortcuts="ctrl+w":STR]')
+confx.resolve('appSettings.uisettings.*[theme:STR="dark", keyboard-shortcuts:STR="ctrl+w"]')
 ```
 
 Adds multiple settings in one go. Like batch processing, but without the stress.
@@ -131,7 +131,7 @@ Updates `userId` to `"aditya"`. Simple, clean, and ready for the next phase.
 confx.resolve('appSettings.uisettings.userId="rohan"')
 ```
 
-Here’s an update to `userId` again. Maybe it's time for a change—flexibility is key.
+Here’s an update to `userId` again. Maybe it's time for a change; flexibility is key.
 
 #### (iii) **Handle Dynamic Values:**
 
@@ -209,9 +209,12 @@ Wrap operations in a transaction for atomicity. Either all changes succeed, or n
 ```python
 schema = {
     "appSettings": {
-        "uisettings": {
+        "uiSettings": {
             "theme": "STR",
-            "userId": "INT"
+        },
+        "userInfo": {
+         "userId": "INT",
+         "userName": "STR" 
         }
     }
 }
